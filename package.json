@@ -1,0 +1,31 @@
+{
+  "name": "xbuilder",
+  "version": "1.0.0",
+  "description": "an xamarin xbuild tool for node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feiin/xbuilder.git"
+  },
+  "keywords": [
+    "xbuild",
+    "xbuilder",
+    "xamarin",
+    "build",
+    "ipa",
+    "build",
+    "apk",
+    "mono",
+    ".net",
+    "core"
+  ],
+  "author": "feiin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/feiin/xbuilder/issues"
+  },
+  "homepage": "https://github.com/feiin/xbuilder#readme"
+}
