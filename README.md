@@ -22,7 +22,7 @@ var options = {
 
 //exec command: xbuild /p:Configuration=Release /p:Platform=iPhone /p:BuildIpa=true /target:Breeze Breeze.sln
 
-xbuild(options).then(([stdout, stderr]) => {
+xbuild(options).then((commandOptions) => {
     //todo..
  }).catch((error) => {
      console.log('error',error);
