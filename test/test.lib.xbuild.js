@@ -20,11 +20,11 @@ describe('test xbuild.js', () => {
                 solutionPath:'Breeze.sln'
             }
 
-            xbuild(options).then(([stdout, stderr]) => {
-               should.not.exist(stderr);
-               stdout.should.be.equal('xbuild /p:Configuration=Release /p:Platform=iPhone /p:BuildIpa=true /target:Breeze Breeze.sln');
+            xbuild(options).then((options) => {
+
+               options.join(' ').should.be.equal('/p:Configuration=Release /p:Platform=iPhone /p:BuildIpa=true /target:Breeze Breeze.sln');
             }).catch((error) => {
-                console.log('error',error);
+                console.log('catch error',error);
             }).finally(()=>{
                 done();
             });
