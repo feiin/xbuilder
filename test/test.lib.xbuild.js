@@ -1,11 +1,12 @@
 const should = require('should');
 var rewire = require('rewire');
 var xbuild = rewire('../lib/xbuild');
+var mockSpawn = require('mock-spawn');
 
 describe('test xbuild.js', () => {
     describe('#build', () => {
         beforeEach((done) => {
-            xbuild.__set__('exec',require('./mocks/child_process.mock.js').exec);
+            xbuild.__set__('spawn',mockSpawn());
             done();
         });
 
@@ -21,8 +22,7 @@ describe('test xbuild.js', () => {
             }
 
             xbuild(options).then((options) => {
-
-               options.join(' ').should.be.equal('/p:Configuration=Release /p:Platform=iPhone /p:BuildIpa=true /target:Breeze Breeze.sln');
+               options.join(' ').should.be.equal('/p:Configuration=Release /p:Platform=iPhone /p:BuildIpa=true /t:Breeze Breeze.sln');
             }).catch((error) => {
                 console.log('catch error',error);
             }).finally(()=>{
