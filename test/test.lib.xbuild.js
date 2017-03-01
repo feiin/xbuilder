@@ -23,10 +23,10 @@ describe('test xbuild.js', () => {
 
             xbuild(options).then((options) => {
                options.join(' ').should.be.equal('/p:Configuration=Release /p:Platform=iPhone /p:BuildIpa=true /t:Breeze Breeze.sln');
+               done();
             }).catch((error) => {
                 console.log('catch error',error);
-            }).finally(()=>{
-                done();
+                done(error);
             });
            
         });
