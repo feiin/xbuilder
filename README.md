@@ -20,7 +20,8 @@ var options = {
         Platform:'iPhone',
         BuildIpa:true
     },
-    solutionPath:'Breeze.sln'
+    solutionPath:'Breeze.sln',
+    targets:['Build']
 };
 
 //exec command: xbuild /p:Configuration=Release /p:Platform=iPhone /p:BuildIpa=true /target:Breeze Breeze.sln
